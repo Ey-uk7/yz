@@ -1,0 +1,18 @@
+<view class="tabbar flex-row">
+  <block wx:for="{{list}}" wx:key="id">
+  <!-- 中间的半圆 -->
+    <view class="tabbar-item flex-column j_c" wx:if="{{index==2}}">
+      <view class="tabbar-circle">
+        <image class="tabbarImg" src="https://img1.baidu.com/it/u=603445371,1866786674&fm=253&fmt=auto&app=138&f=JPEG?w=350&h=350" mode=""/>
+      </view>
+      <view class="tabbarText"> 
+        常用
+      </view>
+    </view>
+    <!-- 其它tabar -->
+    <view class="tabbar-item flex-column j_c" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+      <image src="{{selected === index ? item.selectedIconPath : item.iconPath}}" mode="aspectFill" class="tabbar-item-icon"/>
+      <view style="color: {{selected === index ? selectedColor : color}}" class="tabbar-item-text">{{item.text}}</view>
+    </view>
+  </block>
+</view>

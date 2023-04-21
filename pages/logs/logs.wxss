@@ -1,0 +1,6 @@
+.container {
+  width: 600rpx;
+  background-color: teal;
+  font-size: 100rx;
+  color: red;
+}

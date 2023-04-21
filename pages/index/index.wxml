@@ -1,0 +1,46 @@
+<view class="father">
+  <view class="banner">
+    <swiper 	indicator-active-color="#78bd00" indicator-dots="true" interval="2000" circular="true" autoplay="true">
+      <swiper-item wx:for="{{imgSource}}" wx:key="item">
+        <image class="imgs" src="{{item}}" mode=""/>
+      </swiper-item>
+    </swiper>
+    <!-- 圆点 -->
+    <!-- <view class="dots">
+      <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+    </view> -->
+  </view>
+  <!-- 轮播图下方导航栏 -->
+  <view class="navbar">
+    <view class="navbarBox">
+      <view class="nacbarItem" wx:for="{{navbarData}}" wx:key="item">
+        <image src="{{item.img}}" mode=""/>
+        <view>{{item.text}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 功能区 -->
+  <view class="container">
+    <view class="containerBox">
+      <view class="containerItem" wx:for="{{containerData}}" wx:key="item" bindtap="toggleDialog">
+        <image src="{{item.img}}" mode=""/>
+        <view>{{item.text}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 弹窗 -->
+  <view class="dialog" wx:if="{{showDialog}}">
+    <view class="dialogBox">
+      <view class="dialogText">
+        <text>功能B</text>
+        <text bindtap="closeMask" class="x">X</text>
+      </view>
+      <view class="dialogContainer">
+        <view class="dialogContainerItem" wx:for="{{containerData}}" wx:key="item">
+          <image src="{{item.img}}" mode=""/>
+          <view>{{item.text}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

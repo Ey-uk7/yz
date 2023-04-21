@@ -1,0 +1,5 @@
+/* pages/analyse/analyse.wxss */
+.box {
+  background-color: tomato;
+  font-size: 100rpx;
+}
